@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qccr.notify.dal.UserDao">
+
+    <resultMap id="userMap" type="com.qccr.notify.model.notify.UserDO">
+        <result column="id" property="id" />
+        <result column="user_name" property="userName" />
+
+    </resultMap>
+
+    <sql id="all_column">
+        id, user_name
+    </sql>
+
+    <insert id="insertUser" parameterType="com.qccr.notify.model.notify.UserDO">
+        insert into user (user_name) values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{userName})
+        </foreach>
+    </insert>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qccr.notify.dal.ArticleDao">
+
+    <resultMap id="articleMap" type="com.qccr.notify.model.notify.Article">
+        <result column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="create_time" property="createTime" />
+
+    </resultMap>
+
+    <sql id="all_column">
+        id, title, content, create_time
+    </sql>
+
+    <insert id="insertArticle" parameterType="com.qccr.notify.model.notify.Article">
+        insert into article (title) values  (#{title}, #{content}, now())
+    </insert>
+
+</mapper>
