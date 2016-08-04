@@ -19,6 +19,7 @@ public class Article implements Serializable{
     private static final long serialVersionUID = 2108814677594266549L;
     private  Integer id;
     private  String title;
+    private Integer type;
     private String content;
     private Date createTime;
 
@@ -56,5 +57,13 @@ public class Article implements Serializable{
 
     public String toString() {
         return ToStringBuilder.reflectionToString (this, ToStringStyle.JSON_STYLE);
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 }

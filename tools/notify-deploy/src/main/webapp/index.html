@@ -1,1 +1,54 @@
-hello, world!
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>首页</title>
+    <link href="http://g.alicdn.com/sj/qnui/1.5.1/css/sui.min.css" rel="stylesheet">
+    <script type="text/javascript" src="http://g.alicdn.com/sj/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="http://g.alicdn.com/sj/qnui/1.5.1/js/sui.min.js"></script>
+</head>
+<body>
+<div class="sui-container">
+    <ul class="sui-breadcrumb">
+        <li><a href="#">消息系统</a></li>
+        <li class="active">基础信息初始化</li>
+    </ul>
+
+    <form class="sui-form form-horizontal sui-validate" action="/notify/article/add.do" method="post" id="servingForm">
+        <div class="control-group">
+            <label class="control-label">标题：</label>
+            <div class="controls">
+                <input name="title" class="input-xlarge" type='text' data-rules="required|minlength=2|maxlength=50" />
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">内容：</label>
+            <div class="controls">
+                <textarea name="content" class='input-xlarge' data-rules='maxlength=100'></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button class="sui-btn btn-primary btn-xlarge" type="submit">创建文章</button>
+            </div>
+        </div>
+    </form>
+
+    <form class="sui-form form-horizontal sui-validate" action="/notify/user/add.do" method="post" >
+        <div class="control-group">
+            <label class="control-label">批量创建用户(多个用户用逗号隔开)：</label>
+            <div class="controls">
+                <textarea name="userNames" id="userNames" class='input-xlarge' data-rules='maxlength=100'></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button class="sui-btn btn-primary btn-xlarge" type="submit">创建用户</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

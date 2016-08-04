@@ -12,10 +12,10 @@
         id, user_name
     </sql>
 
-    <insert id="insertUser" parameterType="com.qccr.notify.model.notify.UserDO">
+    <insert id="insertUser" parameterType= "java.util.List">
         insert into user (user_name) values
         <foreach collection="list" item="item" index="index" separator="," >
-            (#{userName})
+            (#{item.userName})
         </foreach>
     </insert>
 

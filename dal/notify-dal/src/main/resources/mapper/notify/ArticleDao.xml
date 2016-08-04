@@ -5,6 +5,7 @@
     <resultMap id="articleMap" type="com.qccr.notify.model.notify.Article">
         <result column="id" property="id" />
         <result column="title" property="title" />
+        <result column="type" property="type" />
         <result column="content" property="content" />
         <result column="create_time" property="createTime" />
 
@@ -15,7 +16,11 @@
     </sql>
 
     <insert id="insertArticle" parameterType="com.qccr.notify.model.notify.Article">
-        insert into article (title) values  (#{title}, #{content}, now())
+        insert into article (title,type, content,create_time) values  (#{title},#{type}, #{content}, now())
     </insert>
+
+    <select id="queryArticle"  resultMap="articleMap">
+        select <include refid="all_column" /> from article
+    </select>
 
 </mapper>
