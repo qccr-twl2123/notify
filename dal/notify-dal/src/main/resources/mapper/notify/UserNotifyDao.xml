@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qccr.notify.dal.UserNotifyDao">
+
+    <resultMap id="userNotifyMap" type="com.qccr.notify.model.notify.UserNotify">
+        <result column="id" property="id" />
+        <result column="is_read" property="isRead" />
+        <result column="user_id" property="userId" />
+        <result column="notify_id" property="notifyId" />
+        <result column="create_time" property="createTime" />
+
+    </resultMap>
+
+    <sql id="all_column">
+        id, is_read, user_id, notify_id, create_time
+    </sql>
+
+    <insert id="addUserNotify" parameterType="com.qccr.notify.model.notify.UserNotify">
+        insert into user_notify (is_read, user_id, notify_id, create_time) values
+        (0, #{userId}, #{notifyId}, #{notifyId}, now())
+    </insert>
+
+</mapper>
