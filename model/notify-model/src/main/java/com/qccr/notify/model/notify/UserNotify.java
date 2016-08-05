@@ -19,6 +19,9 @@ public class UserNotify  implements Serializable{
     private static final long serialVersionUID = 2555026681145699205L;
     private Integer id;
     private Integer userId;
+    /**
+     * 0,未读 1, 已读
+     */
     private  Integer isRead;
     private Integer notifyId;
     private Date createTime;

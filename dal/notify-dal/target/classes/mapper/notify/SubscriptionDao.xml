@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qccr.notify.dal.SubscriptionDao">
+
+    <resultMap id="SubscriptionMap" type="com.qccr.notify.model.notify.SubscriptionDO">
+        <result column="id" property="id" />
+        <result column="target" property="target" />
+        <result column="targetType" property="target_type" />
+        <result column="userId" property="user_id" />
+        <result column="action" property="action" />
+        <result column="createTime" property="create_time" />
+
+    </resultMap>
+
+    <sql id="all_column">
+        id, target, target_type,user_id, action, create_time
+    </sql>
+
+    <insert id="insertSubscription" parameterType="com.qccr.notify.model.notify.SubscriptionDO">
+        insert into subscription (tar,target,target_type,user_id,action,create_time)
+        values  (#{target},#{targetType}, #{userId}, #{action}, now())
+    </insert>
+
+    <select id="getSubscriptionByTarget"  parameterType="int" resultMap="SubscriptionMap">
+        select <include refid="all_column" /> from subscription where target =#{target}
+    </select>
+
+</mapper>

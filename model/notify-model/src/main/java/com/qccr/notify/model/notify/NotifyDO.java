@@ -17,7 +17,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 public class NotifyDO  implements Serializable{
 
-    
+
     /** uid */
     private static final long serialVersionUID = -8216123775796131742L;
     private Integer id;

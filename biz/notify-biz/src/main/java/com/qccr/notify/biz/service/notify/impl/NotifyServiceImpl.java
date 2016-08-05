@@ -23,10 +23,8 @@ import com.qccr.notify.model.notify.NotifyDO;
 public class NotifyServiceImpl implements NotifyService{
 
     @Resource
-    private NotifyDao notifyDao;
-    /** 
-     * @see com.qccr.dinner.biz.service.notify.NotifyService#insertNotify(com.qccr.dinner.model.notify.NotifyDO)
-     */
+    public NotifyDao notifyDao;
+
     @Override
     public void insertNotify(NotifyDO notify) {
         notifyDao.insertNotify(notify);
